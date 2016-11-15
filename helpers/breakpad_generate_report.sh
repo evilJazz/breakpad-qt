@@ -129,11 +129,15 @@ if [ ! -z "$serverUrl" ]; then
     curlCommand="curl -s -k -F \"host=$(hostname)\" -F \"prod=$binaryFileName\" -F \"ver=$version\" -F \"upload_file_crashreport=@$humanReadableReportFileName\""
 
     if [ ! -z "$logFileName" ]; then
-        curlCommand="$curlCommand -F \"upload_file_log=@$logFileName\""
+        tmpLogFileName=/tmp/breakpad_tailed_$$.log
+        tail -n5000 "$logFileName" > "$tmpLogFileName"
+        curlCommand="$curlCommand -F \"upload_file_log=@$tmpLogFileName\""
     fi
 
     curlCommand="$curlCommand \"$serverUrl\""
 
     #echo $curlCommand
     eval $curlCommand
+
+    [ ! -s "$tmpLogFileName" ] && rm "$tmpLogFileName"
 fi
