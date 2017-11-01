@@ -50,7 +50,6 @@ unix:!macx {
     HEADERS += $${BREAKPAD_DIR}/src/common/linux/elfutils-inl.h
     HEADERS += $${BREAKPAD_DIR}/src/common/linux/elf_gnu_compat.h
     HEADERS += $${BREAKPAD_DIR}/src/common/using_std_string.h
-    HEADERS += $${BREAKPAD_DIR}/src/common/memory.h
     HEADERS += $${BREAKPAD_DIR}/src/common/basictypes.h
     HEADERS += $${BREAKPAD_DIR}/src/common/memory_range.h
     HEADERS += $${BREAKPAD_DIR}/src/common/string_conversion.h

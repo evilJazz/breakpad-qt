@@ -10,7 +10,8 @@ if [ ! -d breakpad/src ]; then
 fi
 
 cd breakpad
-git checkout -f 1f574b52c6c34e457b16bc451a52874dde91e4b0
+#git checkout -f 1f574b52c6c34e457b16bc451a52874dde91e4b0
+git checkout -f 7e3c165000d44fa153a3270870ed500bc8bbb461
 cd ..
 
 # Copy missing LSS library...
